@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ShellBar } from './components/ShellBar';
+import './App.scss';
+// import './scss/_mixins.scss'
+// import './style.scss';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
+      <ShellBar onClick={()=>{alert('Hi GOL\'DAN')}}><div><b>HI GUL'DAN</b></div></ShellBar>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -18,7 +21,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }

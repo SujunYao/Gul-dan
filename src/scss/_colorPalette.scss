@@ -1,0 +1,6 @@
+@import './_themes/light';
+@import './_themes/dark';
+$themes: (
+    light: $light,
+    dark: $dark
+)

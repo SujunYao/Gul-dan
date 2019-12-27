@@ -1,4 +1,9 @@
+@import './scss/index';
+
 .App {
+  @include theme-aware('background', 'mainBackgroundColor');
+  width: 200px;
+  height: 300px;
   text-align: center;
 }
 
