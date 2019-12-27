@@ -1,27 +1,40 @@
 import React from 'react';
-import { ShellBar } from './components/ShellBar';
+import { VCButton } from './components/VCButton/VCButton';
 import './App.scss';
-// import './scss/_mixins.scss'
-// import './style.scss';
+
+enum themes {
+  LIGHT = 'light',
+  DARK = 'dark'
+};
+
+enum SIZE {
+  SMALL = 'S',
+  NORMAL = 'N',
+  LARGE = "L"
+};
+
+const initialState = {
+  theme: themes.DARK
+};
+
+type State = Readonly<typeof initialState>;
 
 const App: React.FC = () => {
+  const [theme, setTheme] = React.useState(themes.DARK);
+
   return (
-    <div className="App">
-      <ShellBar onClick={()=>{alert('Hi GOL\'DAN')}}><div><b>HI GUL'DAN</b></div></ShellBar>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+    <div className={`App theme-${theme}`}>
+      <div className='container'>
+        <VCButton text='ADAM' icon='ic_accessibility_p' onClick={() => { alert('Clicked GOV\'DAN'); }} size='S'/>
+        <VCButton text='ADAM' icon='ic_accessibility_p' onClick={() => { alert('Clicked GOV\'DAN'); }} />
+        <VCButton text='ADAM' icon='ic_accessibility_p' onClick={() => { alert('Clicked GOV\'DAN'); }} size='L'/>
+        <VCButton text='ADAM' icon='ic_accessibility_p' onClick={() => { alert('Clicked GOV\'DAN'); }} disabled={true} />
+
+        <div className='themeSwitchBtn'>
+          <button onClick={() => { setTheme(themes.LIGHT); }}>light</button>
+          <button onClick={() => { setTheme(themes.DARK); }} >dark</button>
+        </div>
+      </div>
     </div>
   );
 }

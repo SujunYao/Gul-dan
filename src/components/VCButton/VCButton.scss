@@ -1,0 +1,65 @@
+@import '../../scss/mixins';
+.VCButton{
+    touch-action: manipulation;
+    height: 32px;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+
+    >i {
+        display: inline-block;
+        color: inherit;
+        font-style: normal;
+        text-align: center;
+        text-transform: none;
+    }
+
+    >.VC_btn_icon+span,
+    >span+.VC_btn_icon {
+        margin-left: 8px;
+    }
+}
+
+.VCButton.disabled,
+.VCButton[disabled] {
+    cursor: not-allowed;
+}
+
+.bt_line {
+    @include theme-aware("border", "button_line_border");
+    @include theme-aware("color", "button_line_color");
+    @include theme-aware("background", "button_line_bg");
+}
+
+.bt_line:hover {
+    @include theme-aware("border", "button_line_hover_border");
+    @include theme-aware("color", "button_line_hover_color");
+    @include theme-aware("background", "button_line_hover_bg");
+}
+
+.bt_line.disabled,
+.bt_line[disabled]{
+    @include theme-aware("border", "button_line_diabled_border");
+    @include theme-aware("color", "button_line_diabled_color");
+    @include theme-aware("background", "button_line_diabled_bg");
+}
+
+.L.VCButton {
+    font-size: 16px;
+    height: 40px;
+}
+
+.S.VCButton {
+    font-size: 14px;
+    padding: 0 7px;
+    height: 24px;
+}
+
+

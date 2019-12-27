@@ -1,3 +1,15 @@
 $light:(
-    mainBackgroundColor: yellow
+    mainBackgroundColor: rgba(255, 255, 255, 1),
+
+    button_line_border: 1px solid rgba(64, 196, 255, 1),
+    button_line_color: rgba(64, 196, 255, 1),
+    button_line_bg: none,
+    
+    button_line_hover_color: rgba(255, 255, 255, 1),
+    button_line_hover_border: none,
+    button_line_hover_bg: rgba(64, 196, 255, 1),
+    
+    button_line_diabled_color: rgba(0, 0, 0, 0.26),
+    button_line_diabled_border: 1px solid rgba(0, 0, 0, 0.26),
+    button_line_diabled_bg: none
 );
