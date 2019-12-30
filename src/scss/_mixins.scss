@@ -1,8 +1,33 @@
-@import './colorPalette';
-@mixin theme-aware($key, $color) {
+@import "./colorPalette";
+@mixin theme-aware($key, $color, $color1: false, $color2: false, $color3: false, $color4: false) {
+  @if $key == "box-shadow" {
     @each $theme-name, $theme-color in $themes {
-        .theme-#{$theme-name} & {
-            #{$key}: map-get(map-get($themes, $theme-name), $color)
-        }
+      $params: map-get(map-get($themes, $theme-name), $color);
+      @if $color1 {
+        $params: map-get(map-get($themes, $theme-name), $color), map-get(map-get($themes, $theme-name), $color1);
+      }
+      @if $color2 != false {
+        $params: map-get(map-get($themes, $theme-name), $color), map-get(map-get($themes, $theme-name), $color1),
+          map-get(map-get($themes, $theme-name), $color2);
+      }
+      @if $color3 != false {
+        $params: map-get(map-get($themes, $theme-name), $color), map-get(map-get($themes, $theme-name), $color1),
+          map-get(map-get($themes, $theme-name), $color2), map-get(map-get($themes, $theme-name), $color3);
+      }
+      @if $color4 != false {
+        $params: map-get(map-get($themes, $theme-name), $color), map-get(map-get($themes, $theme-name), $color1),
+          map-get(map-get($themes, $theme-name), $color2), map-get(map-get($themes, $theme-name), $color3),
+          map-get(map-get($themes, $theme-name), $color4);
+      }
+      .theme-#{$theme-name} & {
+        #{$key}: $params;
+      }
     }
+  } @else {
+    @each $theme-name, $theme-color in $themes {
+      .theme-#{$theme-name} & {
+        #{$key}: map-get(map-get($themes, $theme-name), $color);
+      }
+    }
+  }
 }

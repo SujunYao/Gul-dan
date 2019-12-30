@@ -1,65 +1,240 @@
-@import '../../scss/mixins';
-.VCButton{
-    touch-action: manipulation;
-    height: 32px;
-    padding: 0 15px;
-    font-size: 14px;
-    line-height: 1.499;
-    position: relative;
+@import "../../scss/mixins";
+
+/** Base style of the VC button **/
+.VCButton {
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+
+  > i {
     display: inline-block;
-    font-weight: 400;
-    white-space: nowrap;
+    color: inherit;
+    font-style: normal;
     text-align: center;
-    cursor: pointer;
-    border-radius: 4px;
+    text-transform: none;
+  }
 
-    >i {
-        display: inline-block;
-        color: inherit;
-        font-style: normal;
-        text-align: center;
-        text-transform: none;
-    }
-
-    >.VC_btn_icon+span,
-    >span+.VC_btn_icon {
-        margin-left: 8px;
-    }
+  > .VC_btn_icon + span,
+  > span + .VC_btn_icon {
+    margin-left: 8px;
+  }
 }
 
 .VCButton.disabled,
 .VCButton[disabled] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
+/** line type button styles **/
 .bt_line {
-    @include theme-aware("border", "button_line_border");
-    @include theme-aware("color", "button_line_color");
-    @include theme-aware("background", "button_line_bg");
+  @include theme-aware("border", "button_line_border");
+  @include theme-aware("color", "button_line_color");
+  @include theme-aware("background", "button_line_bg");
 }
 
 .bt_line:hover {
-    @include theme-aware("border", "button_line_hover_border");
-    @include theme-aware("color", "button_line_hover_color");
-    @include theme-aware("background", "button_line_hover_bg");
+  @include theme-aware("border", "button_line_hover_border");
+  @include theme-aware("color", "button_line_hover_color");
+  @include theme-aware("background", "button_line_hover_bg");
 }
 
 .bt_line.disabled,
-.bt_line[disabled]{
-    @include theme-aware("border", "button_line_diabled_border");
-    @include theme-aware("color", "button_line_diabled_color");
-    @include theme-aware("background", "button_line_diabled_bg");
+.bt_line[disabled] {
+  @include theme-aware("border", "button_line_disabled_border");
+  @include theme-aware("color", "button_line_disabled_color");
+  @include theme-aware("background", "button_line_disabled_bg");
 }
 
+/** filled type button styles **/
+.bt_filled {
+  // @include theme-aware("border", "button_filled_border");
+  @include theme-aware("color", "button_filled_color");
+  @include theme-aware("box-shadow", "button_filled_shadow_0", "button_filled_shadow_1", "button_filled_shadow_2");
+  @include theme-aware("background", "button_filled_bg");
+  @include theme-aware("border", "button_filled_border");
+}
+
+.bt_filled:hover {
+  @include theme-aware("color", "button_filled_hover_color");
+  @include theme-aware(
+    "box-shadow",
+    "button_filled_hover_shadow_0",
+    "button_filled_hover_shadow_1",
+    "button_filled_hover_shadow_2"
+  );
+  @include theme-aware("background", "button_filled_hover_bg");
+  @include theme-aware("border", "button_filled_hover_border");
+}
+
+.bt_filled.disabled,
+.bt_filled[disabled] {
+  @include theme-aware("color", "button_filled_disabled_color");
+  @include theme-aware("box-shadow", "button_filled_disabled_shadow");
+  @include theme-aware("background", "button_filled_disabled_bg");
+  @include theme-aware("border", "button_filled_disabled_border");
+}
+
+/** primary type button styles **/
+.bt_primary {
+  @include theme-aware("border", "button_primary_border");
+  @include theme-aware("color", "button_primary_color");
+  @include theme-aware("background", "button_primary_bg");
+}
+
+.bt_primary:hover {
+  @include theme-aware("color", "button_primary_hover_color");
+  @include theme-aware("background", "button_primary_hover_bg");
+  @include theme-aware("border", "button_primary_disabled_border");
+}
+
+.bt_primary.disabled,
+.bt_primary[disabled] {
+  @include theme-aware("color", "button_primary_disabled_color");
+  @include theme-aware("background", "button_primary_disabled_bg");
+  @include theme-aware("border", "button_primary_disabled_border");
+}
+
+/** primary special type button styles **/
+
+.bt_primary_s {
+  @include theme-aware("border", "button_primary_s_border");
+  @include theme-aware("color", "button_primary_s_color");
+  @include theme-aware("background", "button_primary_s_bg");
+}
+
+.bt_primary_s:hover {
+  @include theme-aware("color", "button_primary_s_hover_color");
+  @include theme-aware("background", "button_primary_s_hover_bg");
+  @include theme-aware("border", "button_primary_s_disabled_border");
+}
+
+.bt_primary_s.disabled,
+.bt_primary_s[disabled] {
+  @include theme-aware("color", "button_primary_s_disabled_color");
+  @include theme-aware("background", "button_primary_s_disabled_bg");
+  @include theme-aware("border", "button_primary_s_disabled_border");
+}
+
+/** circle type button styles **/
+.bt_circle {
+  @include theme-aware("border", "button_circle_border");
+  @include theme-aware("color", "button_circle_color");
+  @include theme-aware("background", "button_circle_bg");
+  border-radius: 50%;
+}
+
+.bt_circle.onlyIcon {
+  min-width: 32px;
+  padding: 0;
+}
+.bt_circle.L.onlyIcon {
+  min-width: 40px;
+  padding: 0;
+}
+.bt_circle.S.onlyIcon {
+  min-width: 24px;
+  padding: 0;
+}
+
+.bt_circle:hover {
+  @include theme-aware("color", "button_circle_hover_color");
+  @include theme-aware("background", "button_circle_hover_bg");
+  @include theme-aware("border", "button_circle_disabled_border");
+}
+
+.bt_circle.disabled,
+.bt_circle[disabled] {
+  @include theme-aware("color", "button_circle_disabled_color");
+  @include theme-aware("background", "button_circle_disabled_bg");
+  @include theme-aware("border", "button_circle_disabled_border");
+}
+
+/** primary type button styles **/
+.bt_primary {
+  @include theme-aware("border", "button_primary_border");
+  @include theme-aware("color", "button_primary_color");
+  @include theme-aware("background", "button_primary_bg");
+}
+
+.bt_primary:hover {
+  @include theme-aware("color", "button_primary_hover_color");
+  @include theme-aware("background", "button_primary_hover_bg");
+  @include theme-aware("border", "button_primary_disabled_border");
+}
+
+.bt_primary.disabled,
+.bt_primary[disabled] {
+  @include theme-aware("color", "button_primary_disabled_color");
+  @include theme-aware("background", "button_primary_disabled_bg");
+  @include theme-aware("border", "button_primary_disabled_border");
+}
+
+.bt_primary_s.onlyIcon {
+  min-width: 32px;
+  padding: 0;
+}
+.bt_primary_s.L.onlyIcon {
+  min-width: 40px;
+  padding: 0;
+}
+.bt_primary_s.S.onlyIcon {
+  min-width: 24px;
+  padding: 0;
+}
+.bt_primary_s.onlyIcon:hover {
+  @include theme-aware("background", "button_primary_s_icon_hover_bg");
+  @include theme-aware("color", "button_primary_hover_color");
+  @include theme-aware("border-color", "button_primary_s_icon_hover_border_color");
+  border-radius: 50%;
+}
+
+.bt_primary_s.onlyIcon {
+  @include theme-aware("color", "button_primary_s_icon_color");
+}
+
+/** primary special 1 type button styles **/
+.bt_primary_s_1 {
+  @include theme-aware("border", "button_primary_s_1_border");
+  @include theme-aware("color", "button_primary_s_1_color");
+  @include theme-aware("background", "button_primary_s_1_bg");
+}
+
+.bt_primary_s_1:hover {
+  @include theme-aware("color", "button_primary_s_1_hover_color");
+  @include theme-aware("background", "button_primary_s_1_hover_bg");
+  @include theme-aware("border", "button_primary_s_1_disabled_border");
+}
+
+.bt_primary_s_1.disabled,
+.bt_primary_s_1[disabled] {
+  @include theme-aware("color", "button_primary_s_1_disabled_color");
+  @include theme-aware("background", "button_primary_s_1_disabled_bg");
+  @include theme-aware("border", "button_primary_s_1_disabled_border");
+}
+
+.VCButton.bt_primary_s.onlyIcon.disabled,
+.VCButton.bt_primary_s.onlyIcon[disabled] {
+  border: none;
+  background: none;
+}
+
+/** Button Size Style (L: large, S: small, N: normal/default) **/
 .L.VCButton {
-    font-size: 16px;
-    height: 40px;
+  font-size: 16px;
+  height: 40px;
 }
 
 .S.VCButton {
-    font-size: 14px;
-    padding: 0 7px;
-    height: 24px;
+  font-size: 14px;
+  padding: 0 7px;
+  height: 24px;
 }
-
-
