@@ -1,5 +1,6 @@
 import React from 'react';
-import { VCButton } from './components/VCButton/VCButton';
+import VCButton from './components/VCButton';
+import VCCalender from './components/VCCalender';
 import './App.scss';
 
 enum themes {
@@ -53,6 +54,8 @@ const App: React.FC = () => {
         <VCButton text='ADAM' icon='ic_accessibility_p' type='Primary_Special_1' onClick={() => { alert('Clicked GOV\'DAN'); }} />
         <VCButton text='ADAM' icon='ic_accessibility_p' type='Primary_Special_1' onClick={() => { alert('Clicked GOV\'DAN'); }} size='L'/>
         <VCButton text='ADAM' icon='ic_accessibility_p' type='Primary_Special_1' onClick={() => { alert('Clicked GOV\'DAN'); }} disabled={true} />
+        <br/>
+        <VCCalender />
         <div className='themeSwitchBtn'>
           <button onClick={() => { setTheme(themes.LIGHT); }}>light</button>
           <button onClick={() => { setTheme(themes.DARK); }} >dark</button>

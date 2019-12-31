@@ -1,0 +1,53 @@
+.VCCalender_container {
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  outline: none;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  td,th{
+      text-align: center;
+  }
+
+  .VCCalender_header {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    .pre_year, .pre_month{
+        float: left;
+    }
+    .next_year, .next_month{
+        float: right;
+    }
+  }
+  .VCCalender_grid {
+    //     display: table;
+    padding: 8px 12px;
+
+    table {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+  .VCCalender_footer {
+    padding: 0 12px;
+    line-height: 38px;
+    border-top: 1px solid grey;
+    text-align: center;
+  }
+}
