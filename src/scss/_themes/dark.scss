@@ -1,6 +1,5 @@
 @import './colors.scss';
-$dark: (
-    mainBackgroundColor: rgba(33, 33, 33, 1), // for testing the background;
+$dark: (mainBackgroundColor: rgba(33, 33, 33, 1), // for testing the background;
 
     /* line type button styles */
     button_line_border: 1px solid map-get($colors, 'blue-light'),
@@ -15,7 +14,7 @@ $dark: (
     button_line_disabled_border: 1px solid map-get($colors, 'white-30'),
     button_line_disabled_bg: none,
 
-    /* filled type button styles */ 
+    /* filled type button styles */
     button_filled_color: map-get($colors, 'black-87'),
     button_filled_shadow_0: map-get($colors, 'box-shadow-dark-4px_0'),
     button_filled_shadow_1: map-get($colors, 'box-shadow-dark-4px_1'),
@@ -69,7 +68,7 @@ $dark: (
     button_primary_s_1_border: none,
     button_primary_s_1_color: map-get($colors, 'white-54'),
     button_primary_s_1_bg: none,
-    
+
     button_primary_s_1_hover_border: map-get($colors, 'white-12'),
     button_primary_s_1_hover_color: map-get($colors, 'blue-light'),
     button_primary_s_1_hover_bg: map-get($colors, 'white-12'),
@@ -91,4 +90,27 @@ $dark: (
     button_circle_disabled_color: map-get($colors, 'white-16'),
     button_circle_disabled_bg: map-get($colors, 'white-16'),
 
-);
+    /*calender base style*/
+    calender_background_color: map-get($colors, 'grey-66'),
+    calender_content_background_color: map-get($colors, 'grey-101'),
+    calender_font_corlor: map-get($colors, 'white-70'),
+
+    /*day hover style*/
+    calender_day_hover_background_color: map-get($colors, 'white-70'),
+    calender_day_hover_color: map-get($colors, 'black-65'),
+
+    /*current date's day style*/
+    calender_current_day_border: 1px solid map-get($colors, 'primary-color'),
+
+    /*day not included in current month */
+    calender_day_out_of_current_month_color: map-get($colors, 'black-26'),
+
+    /*day selected state*/
+    calender_day_selected_color: map-get($colors, 'black'),
+    calender_day_selected_background_color: map-get($colors, 'primary-color'),
+    calender_day_selected_font_weight: bold,
+
+    /*day out of the date range(minDate, maxDate)*/
+    calender_day_out_of_range_color: map-get($colors, 'black-26'),
+    calender_day_out_of_range_background_color: none,
+    calender_day_out_of_range_font_weight: normal);

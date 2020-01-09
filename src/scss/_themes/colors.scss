@@ -1,8 +1,9 @@
-$colors: (
-  primary-color: rgba(24, 255, 255, 1),
+$colors: (primary-color: rgba(24, 255, 255, 1),
   dark-primary-color: #23b2be,
   blue-light: rgba(64, 196, 255, 1),
+  blue-light-0: rgba(186, 231, 255, 1),
   blue-light-1: rgba(30, 136, 229, 1),
+  blue-light-2: rgba(230, 247, 255, 1),
   white-100: rgba(255, 255, 255, 1),
   white-08: rgba(255, 255, 255, 0.08),
   white-12: rgba(255, 255, 255, 0.12),
@@ -12,29 +13,44 @@ $colors: (
   white-50: rgba(255, 255, 255, 0.5),
   white-54: rgba(255, 255, 255, 0.54),
   white-70: rgba(255, 255, 255, 0.7),
+  /* #1d1d1d */
   grey-29: rgba(29, 29, 29, 1),
-  /* #1d1d1d */ grey-33: rgba(33, 33, 33, 1),
-  /* #212121 */ grey-33-26: rgba(33, 33, 33, 0.26),
+  /* #212121 */
+  grey-33: rgba(33, 33, 33, 1),
+  grey-33-26: rgba(33, 33, 33, 0.26),
+  /* #2e2e2e */
   grey-46: rgba(46, 46, 46, 1),
-  /* #2e2e2e */ grey-73: rgba(73, 73, 73, 1),
-  /* #494949 */ grey-62: rgba(62, 62, 62, 1),
-  /* #626262 */ grey-66: rgba(66, 66, 66, 1),
-  /* #424242 */ grey-97: rgba(97, 97, 97, 1),
-  /* #616161 */ grey-101: rgba(101, 101, 101, 1),
-  /* #656565 */ grey-192: rgba(192, 192, 192, 1),
-  /* #c0c0c0 */ grey-243: rgba(243, 243, 243, 1),
-  /* #f3f3f3 */ black: rgba(0, 0, 0, 1),
+  /* #494949 */
+  grey-73: rgba(73, 73, 73, 1),
+  /* #626262 */
+  grey-62: rgba(62, 62, 62, 1),
+  /* #424242 */
+  grey-66: rgba(66, 66, 66, 1),
+  /* #616161 */
+  grey-97: rgba(97, 97, 97, 1),
+  /* #656565 */
+  grey-101: rgba(101, 101, 101, 1),
+  /* #c0c0c0 */
+  grey-192: rgba(192, 192, 192, 1),
+  /* #f3f3f3 */
+  grey-243: rgba(243, 243, 243, 1),
+  black: rgba(0, 0, 0, 1),
   black-12: rgba(0, 0, 0, 0.12),
   black-16: rgba(0, 0, 0, 0.16),
   black-26: rgba(0, 0, 0, 0.26),
   black-30: rgba(0, 0, 0, 0.3),
   black-54: rgba(0, 0, 0, 0.54),
+  black-65: rgba(0, 0, 0, 0.65),
   black-87: rgba(0, 0, 0, 0.87),
+  /* #f5a623 */
   orange-vivid: rgba(245, 166, 35, 1),
-  /* #f5a623 */ orange-pure: rgba(255, 152, 0, 1),
-  /* #ff9800 */ orange-pure-mostly: rgba(245, 124, 0, 1),
-  /* #f57c00 */ yellow-light: rgba(255, 238, 88, 1),
-  /* #ffee58 */ red-vivid: rgba(255, 23, 68, 1),
+  /* #ff9800 */
+  orange-pure: rgba(255, 152, 0, 1),
+  /* #f57c00 */
+  orange-pure-mostly: rgba(245, 124, 0, 1),
+  /* #ffee58 */
+  yellow-light: rgba(255, 238, 88, 1),
+  red-vivid: rgba(255, 23, 68, 1),
   box-shadow-dark-1px_0: 0px 1px 3px 0px rgba(0, 0, 0, 0.24),
   box-shadow-dark-1px_1: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
   box-shadow-dark-1px_2: 0px 0px 2px 0px rgba(0, 0, 0, 0.18),
@@ -78,5 +94,4 @@ $colors: (
   font-size-text: 14px,
   font-size-note: 12px,
   app-min-width: 840px,
-  app-min-height: 579px
-);
+  app-min-height: 579px);

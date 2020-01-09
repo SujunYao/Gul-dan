@@ -34,6 +34,14 @@
   cursor: not-allowed;
 }
 
+.VCButton:active,
+.VCButton:focus {
+  -moz-outline-style: none;
+  outline-style: none;
+  outline: none;
+  outline: 0;
+}
+
 /** line type button styles **/
 .bt_line {
   @include theme-aware("border", "button_line_border");
