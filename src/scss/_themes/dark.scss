@@ -94,6 +94,8 @@ $dark: (mainBackgroundColor: rgba(33, 33, 33, 1), // for testing the background;
     calender_background_color: map-get($colors, 'grey-66'),
     calender_content_background_color: map-get($colors, 'grey-101'),
     calender_font_corlor: map-get($colors, 'white-70'),
+    calender_footer_color: map-get($colors, 'primary-color'),
+    calender_footer_border_top: 1px solid grey,
 
     /*day hover style*/
     calender_day_hover_background_color: map-get($colors, 'white-70'),
@@ -106,7 +108,7 @@ $dark: (mainBackgroundColor: rgba(33, 33, 33, 1), // for testing the background;
     calender_day_out_of_current_month_color: map-get($colors, 'black-26'),
 
     /*day selected state*/
-    calender_day_selected_color: map-get($colors, 'black'),
+    calender_day_selected_color: map-get($colors, 'black-100'),
     calender_day_selected_background_color: map-get($colors, 'primary-color'),
     calender_day_selected_font_weight: bold,
 

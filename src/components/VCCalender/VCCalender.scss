@@ -67,38 +67,41 @@
           &:hover {
             @include theme-aware('background-color', 'calender_day_hover_background_color');
             @include theme-aware('color', 'calender_day_hover_color');
+            &.selected{
+              @include theme-aware('background-color', 'calender_day_hover_background_color');
+              @include theme-aware('color', 'calender_day_selected_color');
+            }
             cursor: pointer;
           }
 
-        }
-
-        .currentDay {
-          @include theme-aware('border', 'calender_current_day_border');
-        }
-
-        .outOfCurrentMonth {
-          @include theme-aware('color', 'calender_day_out_of_current_month_color');
-        }
-
-        .selected {
-          @include theme-aware('color', 'calender_day_selected_color');
-          @include theme-aware('background-color', 'calender_day_selected_background_color');
-          @include theme-aware('font-weight', 'calender_day_selected_font_weight');
-        }
-
-        .outOfRange {
-          @include theme-aware('color', 'calender_day_out_of_range_color');
-
-          &.selected {
-            @include theme-aware('color', 'calender_day_out_of_range_color');
-            @include theme-aware('background', 'calender_day_out_of_range_background_color');
-            @include theme-aware('font-weight', 'calender_day_out_of_range_font_weight');
+          &.currentDay {
+            @include theme-aware('border', 'calender_current_day_border');
           }
 
-          &:hover {
-            cursor: not-allowed;
+          &.outOfCurrentMonth {
+            @include theme-aware('color', 'calender_day_out_of_current_month_color');
+          }
+
+          &.selected {
+            @include theme-aware('background-color', 'calender_day_selected_background_color');
+            @include theme-aware('font-weight', 'calender_day_selected_font_weight');
+            @include theme-aware('color', 'calender_day_selected_color');
+          }
+
+          &.outOfRange {
             @include theme-aware('color', 'calender_day_out_of_range_color');
-            @include theme-aware('background', 'calender_day_out_of_range_background_color');
+
+            &.selected {
+              @include theme-aware('color', 'calender_day_out_of_range_color');
+              @include theme-aware('background', 'calender_day_out_of_range_background_color');
+              @include theme-aware('font-weight', 'calender_day_out_of_range_font_weight');
+            }
+
+            &:hover {
+              cursor: not-allowed;
+              @include theme-aware('color', 'calender_day_out_of_range_color');
+              @include theme-aware('background', 'calender_day_out_of_range_background_color');
+            }
           }
         }
       }
@@ -108,9 +111,14 @@
   .VCCalender_footer {
     padding: 0 12px;
     line-height: 38px;
-    border-top: 1px solid grey;
     text-align: center;
     border-radius: 0 0 4px 4px;
+    @include theme-aware("border-top", "calender_footer_border_top");
+    @include theme-aware("color", "calender_footer_color");
     @include theme-aware("background-color", "calender_content_background_color");
+
+    &>span:hover {
+      cursor: pointer;
+    }
   }
 }

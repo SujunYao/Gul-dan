@@ -55,6 +55,56 @@ const VCCalender: SFC<props> = ({ currentDate = new Date(), onClick, minDate, ma
         setCDateList(getCurrentViewDays(newSelectedDate));
     };
 
+
+    /* Check and set the state class for each day cell */
+    const calcDayClasses = (_dayInfo: { year: number, month: number, day: number }): string => {
+        let result = '';
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth() + 1;
+        const currentDay = currentDate.getDate();
+        if (_dayInfo.day === currentDay && _dayInfo.month === currentMonth && _dayInfo.year === currentYear) {
+            result += ' currentDay'
+        }
+        if (_dayInfo.day === c_date_info.cDay && _dayInfo.month - 1 === c_date_info.cMonth) {
+            result += ' selected'
+        }
+        if (_dayInfo.month - 1 !== c_date_info.cMonth) {
+            result += ' outOfCurrentMonth'
+        }
+        if (minDate) {
+            const minYear = minDate.getFullYear();
+            const minMonth = minDate.getMonth() + 1;
+            const minDay = minDate.getDate();
+            if (_dayInfo.year < minYear || (_dayInfo.year === minYear && _dayInfo.month < minMonth) || (_dayInfo.year === minYear && _dayInfo.month === minMonth && _dayInfo.day < minDay)) {
+                result += ' outOfRange'
+            }
+        }
+        if (maxDate) {
+            const maxYear = maxDate.getFullYear();
+            const maxMonth = maxDate.getMonth() + 1;
+            const maxDay = maxDate.getDate();
+            if (_dayInfo.year > maxYear || (_dayInfo.year === maxYear && _dayInfo.month > maxMonth) || (_dayInfo.year === maxYear && _dayInfo.month === maxMonth && _dayInfo.day > maxDay)) {
+                result += ' outOfRange'
+            }
+        }
+        return result;
+    };
+
+    /* Set the selected date into today */
+    const setSelectedDateIntoToday = () => {
+        const today = new Date();
+
+        setCDateInfo({
+            cYear: today.getFullYear(),
+            cMonth: today.getMonth(),
+            cDay: today.getDate(),
+            cDate: today
+        });
+        setCDateList(getCurrentViewDays(today));
+
+    };
+
     /* Render the header of the calender box */
     const VCCalenderHeader = () => {
         return (
@@ -77,42 +127,6 @@ const VCCalender: SFC<props> = ({ currentDate = new Date(), onClick, minDate, ma
                 </tr>
             </thead>
         );
-    };
-
-    const calcDayClasses = (_dayInfo: { year: number, month: number, day: number }): string => {
-        let result = '';
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth() + 1;
-        const currentDay = currentDate.getDate();
-        if (_dayInfo.day === currentDay && _dayInfo.month === currentMonth && _dayInfo.year === currentYear) {
-            result += ' currentDay'
-        }
-        if (_dayInfo.day === c_date_info.cDay && _dayInfo.month - 1 === c_date_info.cMonth) {
-            result += ' selected'
-        }
-        console.log(JSON.stringify(c_date_info));
-        console.log(JSON.stringify(_dayInfo));
-        if (_dayInfo.month - 1 !== c_date_info.cMonth) {
-            result += ' outOfCurrentMonth'
-        }
-        if (minDate) {
-            const minYear = minDate.getFullYear();
-            const minMonth = minDate.getMonth() + 1;
-            const minDay = minDate.getDate();
-            if (_dayInfo.year < minYear || (_dayInfo.year === minYear && _dayInfo.month < minMonth) || (_dayInfo.year === minYear && _dayInfo.month === minMonth && _dayInfo.day < minDay)) {
-                result += ' outOfRange'
-            }
-        }
-        if (maxDate) {
-            const maxYear = maxDate.getFullYear();
-            const maxMonth = maxDate.getMonth() + 1;
-            const maxDay = maxDate.getDate();
-            if (_dayInfo.year > maxYear || (_dayInfo.year === maxYear && _dayInfo.month > maxMonth) || (_dayInfo.year === maxYear && _dayInfo.month === maxMonth && _dayInfo.day > maxDay)) {
-                result += ' outOfRange'
-            }
-        }
-        return result;
     };
 
     /* Render the body of the calender table(rows, cells) */
@@ -143,7 +157,7 @@ const VCCalender: SFC<props> = ({ currentDate = new Date(), onClick, minDate, ma
 
     /* Render the footer of the calender box */
     const VCCalenderFooter = () => {
-        return (<div className='VCCalender_footer'><span>{'Today'}</span></div>);
+        return (<div className='VCCalender_footer'><span onClick={() => setSelectedDateIntoToday()}>{'Today'}</span></div>);
     };
 
     return (
