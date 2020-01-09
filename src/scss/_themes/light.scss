@@ -1,7 +1,7 @@
 @import "./colors.scss";
-$light: (
-  mainBackgroundColor: map-get($colors, "white-100"),
-  /* line type button styles */ button_line_border: 1px solid map-get($colors, "blue-light-1"),
+$light: (mainBackgroundColor: map-get($colors, "white-100"),
+  /* line type button styles */
+  button_line_border: 1px solid map-get($colors, "blue-light-1"),
   button_line_color: map-get($colors, "blue-light-1"),
   button_line_bg: none,
   button_line_hover_color: map-get($colors, "white-100"),
@@ -10,7 +10,8 @@ $light: (
   button_line_disabled_color: map-get($colors, "black-26"),
   button_line_disabled_border: 1px solid map-get($colors, "black-26"),
   button_line_disabled_bg: none,
-  /* filled type button styles */ button_filled_color: map-get($colors, "white-100"),
+  /* filled type button styles */
+  button_filled_color: map-get($colors, "white-100"),
   button_filled_shadow_0: map-get($colors, "box-shadow-dark-4px_0"),
   button_filled_shadow_1: map-get($colors, "box-shadow-dark-4px_1"),
   button_filled_shadow_2: map-get($colors, "box-shadow-dark-4px_2"),
@@ -26,7 +27,8 @@ $light: (
   button_filled_disabled_shadow: none,
   button_filled_disabled_bg: map-get($colors, "black-12"),
   button_filled_disabled_border: none,
-  /* primary type button styles */ button_primary_border: none,
+  /* primary type button styles */
+  button_primary_border: none,
   button_primary_color: map-get($colors, "black-54"),
   button_primary_bg: none,
   button_primary_hover_border: none,
@@ -35,7 +37,8 @@ $light: (
   button_primary_disabled_border: none,
   button_primary_disabled_color: map-get($colors, "black-26"),
   button_primary_disabled_bg: none,
-  /* primary special type button styles */ button_primary_s_border: none,
+  /* primary special type button styles */
+  button_primary_s_border: none,
   button_primary_s_color: map-get($colors, "blue-light-1"),
   button_primary_s_bg: none,
   button_primary_s_hover_border: none,
@@ -47,7 +50,8 @@ $light: (
   button_primary_s_icon_color: map-get($colors, "black-54"),
   button_primary_s_icon_hover_bg: map-get($colors, "black-12"),
   button_primary_s_icon_hover_border_color: map-get($colors, "black-12"),
-  /* primary sepcial 1 type button styles */ button_primary_s_1_border: none,
+  /* primary sepcial 1 type button styles */
+  button_primary_s_1_border: none,
   button_primary_s_1_color: map-get($colors, "black-54"),
   button_primary_s_1_bg: none,
   button_primary_s_1_hover_border: map-get($colors, "black-12"),
@@ -56,7 +60,8 @@ $light: (
   button_primary_s_1_disabled_border: none,
   button_primary_s_1_disabled_color: map-get($colors, "black-26"),
   button_primary_s_1_disabled_bg: none,
-  /* circle type button styles */ button_circle_border: map-get($colors, "black-12"),
+  /* circle type button styles */
+  button_circle_border: map-get($colors, "black-12"),
   button_circle_color: map-get($colors, "blue-light-1"),
   button_circle_bg: map-get($colors, "black-12"),
   button_circle_hover_border: map-get($colors, "blue-light-1"),
@@ -64,5 +69,29 @@ $light: (
   button_circle_hover_bg: map-get($colors, "blue-light-1"),
   button_circle_disabled_border: map-get($colors, "black-12"),
   button_circle_disabled_color: map-get($colors, "black-26"),
-  button_circle_disabled_bg: map-get($colors, "black-12")
-);
+  button_circle_disabled_bg: map-get($colors, "black-12"),
+
+  /*calender base style*/
+  calender_background_color: map-get($colors, 'white-100'),
+  calender_content_background_color: map-get($colors, 'white-100'),
+  calender_font_corlor: map-get($colors, 'black-65'),
+
+  /*day hover style*/
+  calender_day_hover_background_color: map-get($colors, 'blue-light-2'),
+  calender_day_hover_color: map-get($colors, 'black-65'),
+
+  /*current date's day style*/
+  calender_current_day_border: 1px solid map-get($colors, 'blue-light-0'),
+
+  /*day not included in current month */
+  calender_day_out_of_current_month_color: map-get($colors, 'black-26'),
+
+  /*day selected state*/
+  calender_day_selected_color: map-get($colors, 'black-26'),
+  calender_day_selected_background_color: map-get($colors, 'blue-light-0'),
+  calender_day_selected_font_weight: bold,
+
+  /*day out of the date range(minDate, maxDate)*/
+  calender_day_out_of_range_color: map-get($colors, 'black-26'),
+  calender_day_out_of_range_background_color: none,
+  calender_day_out_of_range_font_weight: normal);
